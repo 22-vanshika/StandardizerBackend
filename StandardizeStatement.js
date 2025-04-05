@@ -277,21 +277,4 @@ function StandardizeStatement(inputFile, outputFile, debug = false) {
   }
 }
 
-// // CLI support
-// if (require.main === module) {
-//   const [, , inputPath] = process.argv;
-
-//   if (!inputPath) {
-//     console.error("Usage: node index.js <input.csv>");
-//     process.exit(1);
-//   }
-
-//   // Dynamically generate output file name
-//   const inputFileName = path.basename(inputPath); // e.g., HDFC-Input-Case1.csv
-//   const outputFileName = inputFileName.replace("Input", "Output");
-//   const outputPath = path.join(path.dirname(inputPath), outputFileName);
-
-//   StandardizeStatement(inputPath, outputPath);
-// }
-
 module.exports = StandardizeStatement;
