@@ -21,7 +21,9 @@ app.post("/upload", upload.single("statement"), (req, res) => {
   const outputPath = path.join("outputs", outputFileName);
 
   StandardizeStatement(inputPath, outputPath);
-  res.json({ message: "Processed", downloadUrl: `http://localhost:${PORT}/${outputFileName}` });
+  const host = req.headers.host;
+  res.json({ message: "Processed", downloadUrl: `https://${host}/${outputFileName}` });
+  
 });
 
 app.listen(PORT, () => {
